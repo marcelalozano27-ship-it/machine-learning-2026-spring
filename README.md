@@ -12,7 +12,7 @@ This analysis was conducted using **Python** in **Google Colab**.
 
 **numpy** for numerical computations
 
-**matplotlib** for data vizualization
+**matplotlib** for data visualization
 
 **seaborn** for statistical visualizations
 
@@ -31,7 +31,7 @@ This analysis was conducted using **Python** in **Google Colab**.
   
 3) Collinearity Analysis and Feature Selection
     - Used correlation matrices and threshold filtering to identify multicollinearity
-    - Identified highly correlated paris with over 70% correlation
+    - Identified highly correlated pairs with over 70% correlation
     - Reduced redundancy of features
   
 ## Key Insights
@@ -39,7 +39,7 @@ This analysis was conducted using **Python** in **Google Colab**.
 - The Overall Quality and Above Ground Living Area features seemed to be the strongest predictors of house price
 - Several numerical variables had right skewed distributions and extreme outliers
 - For categorical features there was high concentration in a small number of categories
-- Certain features showed strong multicolinearity and were addressed accordingly
+- Certain features showed strong multicollinearity and were addressed accordingly
 
 ## Data Source
 The dataset used in this analysis was provided by the course instructor on the following GitHub repository:
