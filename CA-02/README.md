@@ -10,6 +10,15 @@ To detect spam e-mails, we implemented a Multinominal Naïve Bayes Model to dete
 
 The classifier is trained on a dataset of emails labeled as spam or not spam (train_data). After training the model, the model predicts whether unseen emails in the test dataset(test_data) are spam or not.
 
+### Dataset Information
+
+- **Training Data** – Used for training the model
+      702 emails (351 spam, 351 non spam)
+- **Testing Data** – Used for evaluating model performance on unseen emails.
+      260 emails (130 spam, 130 non spam)
+- Spam emails are classified through the file name starting with "spmsgc"
+- The third line of each email file contains the email body used 
+
 ### Model Step Process
 
 1. Imported all necessary libraries to run the model (NumPy, pandas, sklearn, etc.)
@@ -27,13 +36,6 @@ The classifier is trained on a dataset of emails labeled as spam or not spam (tr
 ### Conclusion
 
 A model accuracy of 96.15% initially suggests a strong overall performance. This however can be misleading as accuracy works best on a balanced dataset. In cases where the data is imbalanced, the model may classify e-mails legitimate emails as spam (false positives) or not classifying e-mails that are spam (false negatives). It is important to include additional evaluation metrics in further analysis of model performance. One metric to look into is the precision of the model. Another evaluation metric we could look at is recall. Finally it might be useful to include a confusion matrix for a more thorough assessment.
-
-### Dataset Information
-
-- **Training Data** – 
-- **Testing Data** – Used for evaluating model performance on unseen emails.
-- Spam emails are classified through the file name starting with "spmsgc"
-- The third line of each email file contains the email body used 
 
 ### Libraries Imported
 
