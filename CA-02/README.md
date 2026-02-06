@@ -6,9 +6,9 @@
 
 ### Overview
 
-To detect spam e-mails, we implemented a Multinominal Naïve Bayes Model to detect key words linked to spam or not spam.
+This project is for BSAN 6070-Introduction to Machine Learning and focuses on building a text based classification model that detects spam emails using a Naïve Bayes Model. The goal of the assignment is to apply fundamental machine learning concepts to a real world text mining problem. We focus on transforming email data into numerical features suitable for using a model.
 
-The classifier is trained on a dataset of emails labeled as spam or not spam (train_data). After training the model, the model predicts whether unseen emails in the test dataset(test_data) are spam or not.
+The classifier is trained on a dataset of emails labeled as spam or not spam (train_data). After training the model, the model predicts whether unseen emails in the test dataset(test_data) should be classified as spam or not. We aim for the model to identify patterns in word usage across emails that form the basis of the vocabulary used to distinguish spam from legitimate emails. From there we evaluate the effectiveness of Naïve Bayes for email classification on unseen data.
 
 ### Dataset Information
 
@@ -19,7 +19,7 @@ The classifier is trained on a dataset of emails labeled as spam or not spam (tr
 - Spam emails are classified through the file name starting with "spmsgc"
 - The third line of each email file contains the email body used 
 
-### Model Step Process
+### Steps taken in the analysis
 
 1. Imported all necessary libraries to run the model (NumPy, pandas, sklearn, etc.)
 2. Due to the size of the data and not wanting to lose any in transfer, we linked our Colab to a shared drive containing all needed data
@@ -39,9 +39,9 @@ A model accuracy of 96.15% initially suggests a strong overall performance. This
 
 ### Libraries Imported
 
-- NumPy
-- pandas
-- sklearn
+**numpy** for numerical computations
+**pandas** for data manipulation and cleaning
+**sklearn** for splitting the data, training the Naive Bayes model, and testing the model accuracy
 
 ### Credit
 
