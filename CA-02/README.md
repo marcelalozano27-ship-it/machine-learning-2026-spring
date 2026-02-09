@@ -1,6 +1,6 @@
 # Computer Assignment 2 – Naïve Bayes
 
-**By:** Marcela and Brandon
+**By:** Marcela Lozano and Brandon Richard
 
 ## Spam Mail Detector Using Naïve Bayes Model
 
