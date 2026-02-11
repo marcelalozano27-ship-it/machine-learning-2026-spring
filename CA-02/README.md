@@ -17,7 +17,13 @@ The classifier is trained on a dataset of emails labeled as spam or not spam (tr
 - **Testing Data** – Used for evaluating model performance on unseen emails.
       260 emails (130 spam, 130 non spam)
 - Spam emails are classified through the file name starting with "spmsgc"
-- The third line of each email file contains the email body used 
+- The third line of each email file contains the email body used
+
+### Instructions for using Google Colab
+1. Upload notebook and data folders to Google Drive
+2. Open notebook in Colab
+3. Mount drive and change path to your Google Drive folder
+
 
 ### Steps taken in the analysis
 
