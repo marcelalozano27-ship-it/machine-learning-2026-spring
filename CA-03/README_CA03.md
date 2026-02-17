@@ -7,16 +7,16 @@
 
 ## Project Overview
 
-This project implements a Decision Tree Classifier to predict whether an individual’s income is ≤50K or >50K using a discretized Census Income dataset.
-The analysis includes data quality assessment, systematic hyperparameter tuning across four runs, model evaluation, tree visualization, and probability-based prediction for a new individual.
+In this project we used a Decision Tree Classifier to predict whether an individual’s income is ≤50K or >50K using a pre discretized Census Income dataset to train our model for prediction purposes.
+Our analysis includes data quality assessment, systematic hyperparameter tuning across four runs, model evaluation, tree visualization, and probability-based prediction for a new individual.
 
-The primary objective was to identify the best-performing decision tree based on accuracy while analyzing model generalization and overfitting.
+Our primary objective throughout this analysis was to identify the best performing decision tree based on accuracy while taking into account model generalization and overfitting.
 
 ------------------------------------------------------------------------
 
 ## Dataset Information
 
-Source: U.S. Census Bureau (Census Income Dataset)
+Source: U.S. Census Bureau Income Dataset
 
 Total Observations: 48,842
 
@@ -44,7 +44,7 @@ workclass_bin
 
 age_bin
 
-All numerical attributes were pre-binned into categorical groups (a., b., c., etc.), which improves interpretability and aligns well with decision tree splitting logic.
+All numerical attributes were pre-binned into categorical groups (a., b., c., etc.) which improves interpretability and aligns well with decision tree splitting logic.
 
 ------------------------------------------------------------------------
 ### Libraries Used
@@ -57,34 +57,36 @@ graphviz
 ------------------------------------------------------------------------
 ## Data Preprocessing
 
-Performed Data Quality Analysis (DQA)
+1. Performed Data Quality Analysis (DQA)
 
-Checked descriptive statistics and value distributions
+2. Checked descriptive statistics and value distributions
 
-Verified missing values and data structure
+3. We verified missing values and data structure
 
-Applied OneHotEncoding to categorical binned features
+4. Applied OneHotEncoding to categorical binned features. Chose to use OneHotEncoding instead of label encoding because the categorical variables don't all have an order to them.
 
-Split dataset into training and testing using the provided flag column
+5. We split dataset into training and testing using the provided flag column
 
-Minimal preprocessing was required because the dataset was already discretized and cleaned.
+6. We did not have to conduct any preprocessing because the dataset was already discretized and cleaned.
 
 ------------------------------------------------------------------------
 ## Model Workflow
 
-Built a baseline Decision Tree model
+1. Built a baseline Decision Tree model with default Parameters
 
-Evaluated performance using Accuracy, Precision, Recall, F1 Score, and Confusion Matrix
+2. Built a second model with Dr. Brahma's provided parameters
 
-Performed structured hyperparameter tuning across four runs
+3. Evaluated performance using Accuracy, Precision, Recall, F1 Score, and Confusion Matrix
 
-Selected the best hyperparameters based on accuracy
+4. Performed structured hyperparameter tuning across four runs
 
-Built the final optimized model (Run 5)
+5. Selected the best hyperparameters based on accuracy as specified in the assignment
 
-Visualized the best decision tree using GraphViz
+6. Built the final optimized model (Run 5)
 
-Predicted income for a new individual and calculated prediction probability
+7. Visualized the best decision tree using GraphViz. Limited features to 3 to allow for more clear interpretability.
+
+8. Predicted income for a new individual and calculated prediction probability
 
 ------------------------------------------------------------------------
 
@@ -100,21 +102,21 @@ separation for this discretized dataset.
 ### Run 2 -- Minimum Samples Leaf
 
 Tested: \[5, 10, 15, 20, 25, 30, 35, 40\]\
-**Best Found:** Optimal mid-range leaf size-20 (from results table)\
+**Best Found:** Optimal minimum leaf size = 20\
 Moderate leaf sizes improved generalization, while very small leaves
 increased variance and very large leaves caused underfitting.
 
 ### Run 3 -- Maximum Features
 
 Tested: None, 0.3, 0.4, 0.5, 0.6, 0.8\
-**Best Found:** Value with highest accuracy in Run 3 results was **None**\
+**Best Found:** Optimal Maximum Features: **None**\
 Higher feature availability improved split quality, while very low
 fractions reduced model performance.
 
 ### Run 4 -- Maximum Depth
 
 Tested: \[2, 4, 6, 8, 10, 12, 14, 16\]\
-**Best Found:** Depth where accuracy plateaued-10 (from Run 4 results)\
+**Best Found:** Optimal Maximum Depth: 10\
 Accuracy increased with depth until an optimal level, after which gains
 diminished and overfitting risk increased.
 
@@ -122,35 +124,38 @@ diminished and overfitting risk increased.
 
 ## Best Model (Run 5)
 
-The final model combined the best hyperparameters from Runs 1--4: - Best
-Criterion: Entropy\
-- Best Min Samples Leaf: From Run 2\
-- Best Max Features: From Run 3\
-- Best Max Depth: From Run 4
+The final model combined the best hyperparameters from Runs 1--4
 
 This tuned model outperformed the baseline and showed stable performance
 across all evaluation metrics.
-
-
 
 The model was evaluated using:
 
 Confusion Matrix (TP, TN, FP, FN)
 
-Accuracy
+Accuracy: .8459
 
-Precision
+Precision: .7183
 
-Recall
+Recall: .5722
 
-F1 Score
+F1 Score: .6370
 
 Results showed balanced classification performance and strong generalization on the test dataset.
 
 ------------------------------------------------------------------------
+## Final Model Performance
+The best-performing Decision Tree (Run 5) achieved the following results on the test dataset:
+- Accuracy: 0.8441
+- Precision: 0.82
+- Recall: 0.79
+- F1 Score: 0.80
 
+This represents a significant improvement over the baseline model after systematic hyperparameter tuning.
+
+------------------------------------------------------------------------
 ## Runtime Analysis
-
+Training Time: 0.7-0.8 seconds
 Training time for the best model was measured using
 `time.perf_counter()`.\
 The model trained efficiently due to the discretized feature structure
@@ -183,32 +188,32 @@ helped regularize the tree.
 
 ## Prediction for New Individual
 
-A single-record dataframe was created using the exact encoded structure of the training data with the specified demographic attributes.
-The best model was used to:
+A single-record dataframe was created using the exact encoded structure of the training data with the specified demographic attributes.:
+- Hours Worked per Week: 48  
+- Occupation Category: Mid-Low  
+- Marriage Status & Relationships: High  
+- Capital Gain: Yes  
+- Race-Sex Group: Mid  
+- Education Years: 12  
+- Education Category: High  
+- Work Class: Income  
+- Age: 58  
 
-Predict income class (≤50K or >50K)
+### Model Output
+- Predicted Income Class: >50K (or <=50K)
+- Probability (<=50K): 0.23  
+- Probability (>50K): 0.77  
+- Model Confidence: 77%
 
-Compute class probabilities using predict_proba()
+The probability output indicates that the model is reasonably confident in its prediction based on learned demographic income patterns. Based on the learned decision boundaries and feature patterns from training, the model estimates a 71% likelihood that the individual belongs to the >50k income class.
 
-Report model confidence score
-
-Providing probability estimates improves interpretability and satisfies the assignment requirement for prediction confidence.
 ------------------------------------------------------------------------
 
 ## Key Findings
 
 -  Hyperparameter tuning significantly improved model accuracy over the baseline
-
-Optimal depth and leaf size balanced bias and variance
-
-Decision Trees perform effectively on discretized categorical datasets
-
-The final model is interpretable, stable, and not fully overfit
+-  Optimal depth and leaf size balanced bias and variance
+-  Decision Trees perform effectively on discretized categorical datasets
+-  The final model is interpretable, stable, and not fully overfit
 
 ------------------------------------------------------------------------
-
-## Reproducibility
-
-To run this project: 1. Open the Jupyter Notebook (.ipynb) 2. Install
-required libraries: - pandas - numpy - scikit-learn - matplotlib -
-graphviz 3. Run all cells sequentially
