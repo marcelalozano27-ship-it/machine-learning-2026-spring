@@ -48,12 +48,12 @@ All numerical attributes were pre-binned into categorical groups (a., b., c., et
 
 ------------------------------------------------------------------------
 ### Libraries Used
-
-pandas
-numpy
-scikit-learn
-matplotlib
-graphviz
+1. pandas
+2. numpy
+3. scikit-learn
+4. matplotlib
+5. graphviz
+6. autoviz
 ------------------------------------------------------------------------
 ## Data Preprocessing
 
