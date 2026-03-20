@@ -92,6 +92,30 @@ The system:
 
 \---
 
+### Example Query Used
+
+This recommender system identifies the Top 5 movies most similar to:
+
+**'The Post'** Feature vector:
+
+IMDB Rating = 7.2
+Biography = 1
+Drama = 1
+Thriller = 0
+Comedy = 0
+Crime = 0
+Mystery = 0
+History = 1
+
+
+The following **model recommendations** were generated using Euclidean distance between this feature vector and all movies in the dataset
+
+1. **12 Years a Slave** (Distance: 1.3741)
+2. **Hacksaw Ridge** (Distance: 1.5268)
+3. **Queen of Katwe** (Distance: 3.3473)
+4. **The Wind Rises** (Distance: 3.4569)
+5. **A Beautiful Mind** (Distance: 3.6664)
+
 ## Key Insights
 
 * kNN is effective for recommendation systems when similarity can be defined numerically
