@@ -8,9 +8,9 @@
 
 ## Project Overview
 
-This project builds a movie recommendation system using the **K Nearest Neighbor (kNN)** algorithm. The model identifies movies that are most similar to a selected movie based on shared numeric features and returns the **Top 5 closest recommendations** using distance based similarity.
+This goal of this project is to build a movie recommendation system using the **K Nearest Neighbor (kNN)** algorithm. The model identifies movies that are most similar to a selected movie based on shared numeric features and returns the **Top 5 closest recommendations** using distance based similarity.
 
-Similarity between movies is calculated using **Euclidean distance**, where smaller distances indicate stronger similarity between films.
+Similarity between movies is calculated using **Euclidean distance**, where smaller distances signal stronger similarity between films.
 
 \---
 
