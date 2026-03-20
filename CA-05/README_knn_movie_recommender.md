@@ -1,4 +1,4 @@
-# &#x20;K Nearest Neighbor (kNN) Movie Recommendation System
+# K Nearest Neighbor (kNN) Movie Recommendation System
 
 **Course:** MSBA Computer Assignment 5  
 **Technique:** K Nearest Neighbor (kNN)  
@@ -6,15 +6,15 @@
 
 \---
 
-## &#x20;Project Overview
+## Project Overview
 
-This project builds a movie recommendation system using the **K Nearest Neighbor (kNN)** algorithm. The model identifies movies that are most similar to a selected movie based on shared numeric features and returns the **Top 5 closest recommendations** using distance-based similarity.
+This project builds a movie recommendation system using the **K Nearest Neighbor (kNN)** algorithm. The model identifies movies that are most similar to a selected movie based on shared numeric features and returns the **Top 5 closest recommendations** using distance based similarity.
 
 Similarity between movies is calculated using **Euclidean distance**, where smaller distances indicate stronger similarity between films.
 
 \---
 
-## &#x20;Objective
+## Objective
 
 The objective of this project is to:
 
@@ -25,7 +25,7 @@ The objective of this project is to:
 
 \---
 
-## &#x20;Dataset
+## Dataset
 
 Dataset source:
 
@@ -35,11 +35,11 @@ The dataset contains numeric movie characteristics used to compute similarity be
 
 \---
 
-## &#x20;Methodology
+## Methodology
 
 The recommendation system follows these steps:
 
-### &#x20;Import Libraries
+### Import Libraries
 
 Required Python libraries:
 
@@ -52,25 +52,25 @@ Required Python libraries:
 
 \---
 
-### &#x20;Load Dataset
+### Load Dataset
 
 The dataset is imported directly from GitHub into the Python notebook environment.
 
 \---
 
-### &#x20;Select Numeric Features
+### Select Numeric Features
 
 Only numeric columns are used because kNN relies on distance calculations between feature values.
 
 \---
 
-### &#x20;Feature Scaling
+### Feature Scaling
 
 The **StandardScaler** function is applied to ensure features are on comparable scales and prevent bias from variables with larger magnitudes.
 
 \---
 
-### &#x20;Train kNN Model
+### Train kNN Model
 
 The **NearestNeighbors** function is used with:
 
@@ -79,7 +79,7 @@ The **NearestNeighbors** function is used with:
 
 \---
 
-### &#x20;Generate Recommendations
+### Generate Recommendations
 
 A selected movie is entered as input along with its feature values.
 
@@ -92,7 +92,7 @@ The system:
 
 \---
 
-## &#x20;Key Insights
+## Key Insights
 
 * kNN is effective for recommendation systems when similarity can be defined numerically
 * feature scaling is critical for accurate distance calculations
